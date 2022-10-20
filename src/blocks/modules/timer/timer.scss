@@ -1,0 +1,77 @@
+@import "main-bx";
+
+.timer {
+    display: flex;
+    align-items: center;
+    color: $color_dark;
+
+    @include below(768px) {
+        justify-content: center;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60px;
+    }
+
+    &__dot {
+        padding: 0 15px;
+        position: relative;
+
+        @include below(768px) {
+            padding: 0 10px;
+        }
+
+        &::before {
+            top: -10px;
+
+            @include below(768px) {
+                top: -20px;
+            }
+        }
+
+        &::after {
+            bottom: -10px;
+
+            @include below(768px) {
+                bottom: 0;
+            }
+        }
+
+        &::after,
+        &::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            border-radius: 50%;
+            background: #05141F;
+            opacity: 0.7;
+        }
+    }
+
+    &__numb {
+        @include fontProperty(600, 50px, 60px);
+
+        @include below(1600px) {
+            font-size: 40px;
+            line-height: 120%
+        }
+    
+        @include below(768px) {
+            font-size: 35px;
+            line-height: 42px;
+        }
+    }
+
+    &__text {
+        @include fontProperty(400, 13px, 14px, rgba(105, 114, 121, 0.6));
+
+        @include below(768px) {
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+}

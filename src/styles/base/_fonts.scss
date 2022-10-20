@@ -1,0 +1,17 @@
+@font-face {
+    @include fontImport(
+        'KiaSignature',
+        '../fonts/KiaSignatureRegular',
+        400,
+    )
+}
+
+
+@font-face {
+    @include fontImport(
+        'KiaSignature',
+        '../fonts/KiaSignatureBold',
+        600,
+    )
+}
+

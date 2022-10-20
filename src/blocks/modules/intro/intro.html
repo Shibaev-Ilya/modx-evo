@@ -1,0 +1,74 @@
+<section class="intro">
+    <div class="intro__slider js-intro-slider" data-arrows="./img/svg/s-prev.svg, ./img/svg/s-next.svg">
+        <div class="intro__slider-item">
+            <div class="intro__img">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="./img/content/main-xs.webp">
+                    <img src="./img/content/ban0.webp" alt="Kia АВТОРУСЬ Подольск">
+                </picture>
+            </div>
+            <div class="intro__content container">
+                <div class="intro__content-inner">
+                    <h1 class="intro__title">Максимальные выгоды</h1>
+                    <p class="intro__text">При покупке Kia до 15.07</p>
+                </div>
+            </div>
+        </div>
+        <div class="intro__slider-item">
+            <div class="intro__img">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="./img/content/ban1m.webp">
+                    <img src="./img/content/ban1.webp" alt="Kia АВТОРУСЬ Подольск">
+                </picture>
+            </div>
+            <div class="intro__content container">
+                <div class="intro__content-inner">
+                    <h1 class="intro__title">Kia в наличии и под заказ!</h1>
+                    <p class="intro__text">Автомобили с ПТС</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="intro__bottom container">
+        <div class="intro__bottom-wrap">
+            <div class="intro__bottom-item">
+                <h3 class="intro__bottom-title">
+                    Успейте получить выгоду!
+                </h3>
+                <p class="intro__bottom-text">
+                    До конца спецпредложения осталось:
+                </p>
+            </div>
+            <div class="intro__bottom-item">
+                @@include("../timer/timer.html")
+            </div>
+            <div class="intro__bottom-item">
+                <form action="/_app/index.php" class="form intro__form js-form js-ajax-form" data-id="form-application">
+                    <fieldset >
+                        <div class="intro__form-row">
+                            <label for="phone" class="form__label required">
+                                <input type="tel" name="phone" id="phone" class="js-form-input" placeholder="Ваш телефон">
+                            </label>
+                            <button class="btn btn_dark form__btn js-form-submit" type="submit">
+                                <div class="lds-dual-ring btn__spin"></div>
+                                <span>Оставить заявку</span>
+                            </button>
+                        </div>
+                        <label for="policy" class="form__check">
+                            <input type="checkbox" hidden id="policy" name="policy" class="js-policy">
+                            <span class="form__check-box">
+                                <img src="./img/svg/checkmark.svg" alt="">
+                            </span>
+                            <p class="intro__form__policy">
+                                Нажимая кнопку «Заказать», я даю согласие на обработку своих 
+                                <a href="/" target="_blank">персональных данных</a>
+                            </p>
+                        </label>
+                    </fieldset>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,382 @@
+@import "main-bx";
+
+.models {
+    overflow: hidden;
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(246, 247, 248, 0.7);
+        padding: 7px 20px;
+
+        margin-bottom: 100px;
+
+        @include below(1440px) {
+            margin-bottom: 60px;
+        }
+
+        @include below(768px) {
+          padding: 15px;
+          margin-bottom: 40px;
+        }
+
+        @include below(1000px) {
+            flex-direction: column-reverse;
+        }
+
+      &.even {
+        flex-direction: row-reverse;
+
+        @include below(1000px) {
+          flex-direction: column-reverse;
+        }
+
+        .models__img img {
+          margin-left: 0;
+
+          @include below(1500px) {
+            margin: 0;
+            object-position: 0 0;
+          }
+
+          @include below(1000px) {
+            object-position: 0 0;
+          }
+        }
+
+        .models__item__special-price {
+          padding: 70px 0px 34px 70px;
+          @include below(768px) {
+            padding: 0px;
+            margin: 15px 40px 0px 0px;
+          }
+        }
+
+        .models__special {
+          justify-content: flex-start;
+
+        }
+
+        .models__gift-item_star {
+          right: auto;
+          left: 39%;
+
+          @include below(1500px) {
+            left: 30%;
+          }
+
+          @include below(1330px) {
+            left: 25%;
+          }
+
+          @include below(1200px) {
+            left: 25px;
+          }
+
+          @include below(1000px) {
+            left: auto;
+            right: 54px;
+          }
+
+          @include below(768px) {
+            right: auto;
+          }
+        }
+
+        .models__gift-text sup {
+          font-size: 12px;
+          top: -14px;
+          left: 3px;
+        }
+
+      }
+
+        &-col {
+            &:first-child {
+                padding: 34px 30px;
+
+                @include below(768px) {
+                    padding: 0;
+                }
+            }
+        }
+
+        &__benefits {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__special-price {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 70px 70px 34px 0px;
+            @include below(768px) {
+                padding: 0;
+            }
+        }
+
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 17px;
+
+        @include below(768px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__title {
+        @include fontProperty(400, 50px, 100%, $color_dark);
+        margin-right: 18px;
+        white-space: nowrap;
+
+        @include below(768px) {
+            font-size: 24px;
+            line-height: 100%;
+            margin-right: 10px;
+        }
+    }
+
+    &__die {
+        @include fontProperty(600, 15px, 100%, $color_dark);
+        text-transform: uppercase;
+        padding: 8px 17px;
+        background-color: rgba(5, 20, 31, 0.05);
+        white-space: nowrap;
+
+        @include below(768px) {
+            font-size: 8px;
+            line-height: 100%;
+            padding: 5px;
+        }
+    }
+
+    &__gift {
+        margin-bottom: 40px;
+        &-item {
+            display: flex;
+            align-items: center;
+            @include below(768px) {
+                margin-bottom: 15px;
+            }
+            &_star {
+                position: absolute;
+                top: 36px;
+                right: 54px;
+
+                @include below(768px) {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    right: auto;
+                }
+            }
+            @include below(768px) {
+                margin-bottom: 0px;
+            }
+        }
+
+        &-text {
+            @include fontProperty(600, 24px, 28.8px, $color_dark);
+            margin-left: 15px;
+            @include below(768px) {
+                font-size: 16px;
+                line-height: 100%;
+                max-width: 170px;
+            }
+        }
+
+        &-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F3C300;
+            img {
+                width: 23px;
+                height: 22px;
+
+                @include below(768px) {
+                    width: 20px;
+                    height: 19.13px;
+                }
+            }
+
+            @include below(768px) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    &__gift-text sup {
+        font-size: 12px;
+        top: -14px;
+        left: 3px;
+    }
+
+    &__scope {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        flex-wrap: wrap;
+        @include below(768px) {
+            margin-bottom: 30px;
+        }
+        &-col {
+            width: 50%;
+        }
+
+        &-item {
+            min-height: 75px;
+            width: 50%;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
+        &-key {
+            @include fontProperty(400, 15px, 18px, $color_dark);
+            opacity: 0.8;
+            margin-bottom: 7px;
+
+            @include below(768px) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        &-val {
+            padding-right: 10px;
+            @include fontProperty(600, 23px, 100%, $color_dark);
+            @include below(768px) {
+                font-size: 16px;
+            }
+            &-min {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 100%;
+                color: #05141F;
+            }
+            sup {
+                font-size: 12px;
+                top: -12px;
+                left: 3px;
+            }
+        }
+    }
+
+    &__img {
+        @include below(1500px) {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        img {
+            width: auto;
+            max-width: inherit;
+            margin-left: -245px;
+
+            @include below(1500px) {
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+                height: 80%;
+            }
+
+            @include below(1200px) {
+                height: 70%;
+            }
+
+            @include below(768px) {
+                height: 100%;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        @include below(768px) {
+            flex-direction: column;
+        }
+        .btn {
+            padding: 21px 40px;
+            white-space: nowrap;
+        }
+
+        .btn_dark {
+            margin-right: 10px;
+
+            @include below(768px) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        .btn_yellow {
+            margin-right: 10px;
+            background-color: #F3C300;
+            color: #05141F;
+            font-weight: 700;
+            border: 0;
+            padding: 23px 72px 19px 72px;
+
+            span::before {
+                background-color: #05141F;
+            }
+
+            @include below(768px) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        .btn_light_yellow {
+            border: 1px solid #F3C300;
+            font-size: 18px;
+            font-weight: 700;
+            background: none;
+        }
+    }
+
+    &__special {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 15px;
+        @include below(768px) {
+            justify-content: flex-start;
+            margin-top: 15px;
+        }
+    }
+
+    &__special-text {
+        margin-left: 15px;
+        max-width: 300px;
+    }
+    &__special-icon img {
+        height: 23px;
+    }
+
+    &__disclaimer {
+        margin: -30px 0px 50px 0px;
+        display: flex;
+        justify-content: center;
+        max-width: 1460px;
+        @include below(768px) {
+            margin: 0px 0px 50px 0px;
+        }
+    }
+
+    &__disclaimer__title {
+        display: flex;
+        justify-content: center;
+    }
+
+}

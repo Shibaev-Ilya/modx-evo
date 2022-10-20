@@ -1,0 +1,1 @@
+export const phoneReplace = string => string.replace(/[^\d\+]/g, '');

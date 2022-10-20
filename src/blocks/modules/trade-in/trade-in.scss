@@ -1,0 +1,111 @@
+@import "main-bx";
+
+.trade-in {
+    &__wrap {
+        display: flex;
+
+        @include below(768px) {
+            flex-direction: column;
+            width: 100%;
+            max-width: 375px;
+            margin: 0 auto;
+        
+            &:last-child {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    &__item {
+        height: 100%;
+        width: 50%;
+        background: rgba(246, 247, 248, 0.3);
+        
+        .btn {
+            padding: 21px 40px;
+        }
+
+        img {
+            display: block;
+
+            @include below(768px) {
+                height: 240px;
+            }
+        }
+
+        @include below(1500px) {
+            height: 500px;
+        }
+
+        @include below(768px) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        &_first {
+            padding: 168px 182px 0 230px;
+
+            @include below(1700px) {
+                padding: 130px 130px 0 80px;
+            }
+
+            @include below(1500px) {
+                padding: 100px 0 0 80px;
+            }
+
+            @include below(900px) {
+                padding: 50px 0 0 20px;
+            }
+            @include below(768px) {
+                padding: 20px 10px 30px;
+            }
+        }
+
+        &_second {
+            padding: 137px 0 0 80px;
+            width: 100%;
+            max-width: 500px;
+
+            @include below(1500px) {
+                padding: 100px 0 0 80px;
+            }
+
+            @include below(900px) {
+                padding: 50px 0 0 20px;
+            }
+            @include below(768px) {
+                padding: 30px 10px;
+            }
+        }
+    } 
+
+    &__title {
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        @include fontProperty(400, 18px, 160%, $color_dark);
+        margin-bottom: 30px;
+
+        @include below(768px) {
+            font-size: 16px;
+            line-height: 160%;
+        }
+    }
+
+    &__cost {
+        &-text {
+            @include fontProperty(400, 15px, 18px, $color_dark);
+            margin-bottom: 8px;
+        }
+
+        &-numb {
+            @include fontProperty(600, 25px, 100%, $color_dark);
+        }
+        margin-bottom: 30px;
+    }
+}

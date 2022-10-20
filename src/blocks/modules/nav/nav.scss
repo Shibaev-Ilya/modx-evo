@@ -1,0 +1,127 @@
+@import "main-bx";
+
+.nav {
+    background-color: #fff;
+    position: fixed;
+    top: 71px;
+    z-index: 1000;
+    width: 100%;
+    @include below(860px) {
+        top: 42px;
+        right: 0;
+        z-index: 1000;
+        position: fixed;
+        width: 100%;
+        padding: 40px;
+        max-width: 375px;
+        transform: translateX(100%);
+        transition: all .2s linear;
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    @include below(460px) {
+        padding: 40px 15px;
+    } 
+
+    &__dealer {
+        display: none;
+        @include below(860px) {
+            display: block;
+        }
+
+        &-title {
+            @include fontProperty(400, 18px, 19px, $color_dark);
+            margin-bottom: 3px;
+        }
+
+        &-text {
+            @include fontProperty(400, 14px, 19px);
+            color: rgba(105, 114, 121, 0.6);
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include below(1000px) {
+            justify-content: space-between;
+        }
+
+        @include below(860px) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 !important;
+            margin-top: 50px;
+        }
+    }
+
+    &__list-item {
+        padding: 0 30px;
+
+        @include below(1095px) {
+            padding: 0 15px;
+        }
+
+        @include below(860px) {
+            padding: 0;
+        }
+
+        a {
+            display: block;
+            padding: 21px 0;
+
+            @include fontProperty(400, 15px, 18px, $color_dark);
+            letter-spacing: 0.05em;
+            transition: all .2s linear;
+            position: relative;
+
+            @include below(915px) {
+                font-size: 13px;
+            }
+
+            @include below(860px) {
+                padding: 12px 0;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 14px;
+                left: 0;
+                right: 0;
+                width: 0;
+                height: 1px;
+                background-color: $color_dark;
+                transition: all .2s linear;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
+        
+        }
+    }
+
+    &__address {
+        display: none; 
+        @include fontProperty(400, 12px, 15px, $color_dark);
+        margin-top: 50px;
+        margin-bottom: 20px;
+        @include below(860px) {
+            display: block;
+        }
+    }
+
+    &__tel {
+        display: none; 
+        @include fontProperty(600, 18px, 19px, $color_dark);
+        @include below(860px) {
+            display: block;
+        }
+    }
+}

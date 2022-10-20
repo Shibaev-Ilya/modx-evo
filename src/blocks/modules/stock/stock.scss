@@ -1,0 +1,150 @@
+@import "main-bx";
+
+.stock {
+    &__head {
+        display: flex;
+        margin: 40px 0 20px;
+        justify-content: end;
+        @include below(768px) {
+            margin: 20px 0 0;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include below(768px) {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .form__label {
+            width: 100%;
+            max-width: 300px;
+            margin-right: 30px;
+
+            @include below(768px) {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            select {
+                width: 100%;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 50%;
+
+        //@include below(768px) {
+            //display: none;
+        //}
+
+        @include below(768px) {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .form__label {
+            width: 100%;
+            max-width: 300px;
+            @include below(768px) {
+                max-width: 100%;
+            }
+
+            select {
+                width: 100%;
+            }
+            &:first-child {
+                margin-right: 30px;
+
+                @include below(768px) {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    &__key {
+        width: 50%;
+        text-align: center;
+        @include fontProperty(400, 16px, 19px, $color_dark);
+        opacity: 0.6;
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 100px;
+
+        @include below(1320px) {
+            padding: 20px 50px;
+        }
+
+        @include below(768px) {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        &:first-child {
+            border-top: 1px solid #CDD0D2;
+
+            @include below(768px) {
+                border-top: 0;
+            }
+        }
+
+        border-bottom: 1px solid #CDD0D2;
+
+        .btn {
+            padding: 21px 40px;
+            white-space: nowrap;
+            @include below(768px) {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__list-text {
+        @include fontProperty(400, 18px, 175%, $color_dark);
+        width: 22%;
+
+        @include below(768px) {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__list-model {
+        @include below(768px) {
+            font-weight: 600;
+        }
+    }
+
+    &__list-key {
+        display: none;
+        font-size: 11px;
+        line-height: 175.7%;
+        opacity: 0.5;
+        @include below(768px) {
+            display: block;
+            width: 30%;
+        }
+    }
+}
+
+.model__not-available {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

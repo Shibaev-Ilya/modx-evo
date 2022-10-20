@@ -1,0 +1,40 @@
+<div class="modal" id="modal-call">
+    <div class="modal__wrap">
+        <h4 class="modal__title">Оставить заявку</h4>
+        <p class="modal__text">Укажите ваш номер телефона, и наш менеджер свяжется с вами</p>
+        <form action="/_app/index.php" class="form modal__form js-form js-ajax-form" data-id="form-application2">
+            <fieldset>
+                <label for="name" class="form__label">
+                    <input type="text" name="name" id="name" class="modal__form-input js-form-input" placeholder="Имя">
+                </label>
+                <label for="phone" class="form__label required">
+                    <input type="tel" name="phone" id="phone" class="modal__form-input js-form-input" placeholder="Телефон">
+                </label>
+                <button class="btn btn_dark form__btn js-form-submit" type="submit">
+                    <span>Оставить заявку</span>
+                    <div class="lds-dual-ring btn__spin"></div>
+                </button>
+                <label for="policy" class="form__check">
+                    <input type="checkbox" hidden id="policy" name="policy" class="js-policy">
+                    <span class="form__check-box">
+                        <img src="./img/svg/checkmark.svg" alt="">
+                    </span>
+                    <p class="modal__policy">
+                        Нажимая кнопку «Заказать», я даю согласие на обработку своих персональных данных
+                        <a href="/" target="_blank">персональных данных</a>
+                    </p>
+                </label>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div class="modal modal_success" id="modal-success">
+    <div class="modal__wrap">
+        <h4 class="modal__title">Спасибо!</h4>
+        <p class="modal__text">Мы свяжемся с Вами в ближайшее время</p>
+        <button class="form__btn btn btn_dark js-popup-close">
+            <span>Хорошо</span>
+        </button>
+    </div>
+</div>

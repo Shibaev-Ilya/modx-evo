@@ -1,0 +1,318 @@
+@import "main-bx";
+
+.intro {
+    @include below(768px) {
+        margin-bottom: 0;
+    }
+    position: relative;
+    margin-bottom: 80px;
+    &__slider {
+
+        @include below(768px) {
+            height: auto;
+        }
+        height: 610px;
+
+        .slick-list, .slick-track, .intro__img {
+
+            @include below(768px) {
+                height: auto;
+            }
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .slick-arrow {
+
+            @include below(1600px) {
+                top: 65%;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            width: 60px;
+            height: 60px;
+            transition: all .2s linear;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            &::before {
+                content: none;
+            }
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .slick-prev {
+            @include below(1600px) {
+                left: 40px;
+            }
+            left: 80px;
+        }
+
+        .slick-next {
+            @include below(1600px) {
+                right: 40px;
+            }
+            right: 80px;
+        }
+
+        .slick-dots {
+            li {
+                width: 40px;
+                height: 2px;
+                background-color: #cdd0d2;
+
+                &.slick-active {
+                    background-color: #000;
+                }
+            }
+            button {
+                display: none;
+            }
+        }
+    }
+
+    &__slider-item {
+        position: relative;
+
+        &:not(:first-child) {
+            display: none;
+        }
+
+        &.slick-slide {
+            display: block;
+        }
+    }
+
+    &__content {
+
+        @include below(768px) {
+            position: relative;
+            top: auto;
+            right: auto;
+            left: auto;
+            margin-top: 10px;
+        }
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+
+        &-inner {
+            width: 100%;
+            max-width: 700px;
+        }
+    }
+
+    &__title {
+        @include fontProperty(600, 58px, 70px, $white);
+
+        @include below(1600px) {
+            font-size: 45px;
+            line-height: 120%;
+            margin-left: 0;
+        }
+
+        @include below(768px) {
+            color: $color_dark;
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 10px;
+            margin-left: 0;
+            text-shadow: 0 0;
+            
+        }
+        letter-spacing: -0.02em;
+        margin-bottom: 18px;
+        margin-left: -30px;
+        text-shadow: 1px 2px 3px #000000;
+        &-black {
+            color: $color_dark;
+            text-shadow: none;
+        }
+    }
+
+    &__text {
+        @include fontProperty(600, 36px, 43px, $white);
+        @include below(1600px) {
+            font-size: 30px;
+            line-height: 120%;
+            text-shadow: 1px 2px 3px #000000;
+        }
+
+        @include below(768px) {
+            color: $color_dark;
+            font-size: 18px;
+            line-height: 22px;
+            text-shadow: 0 0;
+        }
+        text-shadow: 1px 2px 3px #000000;
+        &-black {
+            color: $color_dark;
+            text-shadow: none;
+            @include below(1600px) {
+                text-shadow: none;
+            }
+        }
+        &-small {
+            font-size: 26px;
+            margin-top: 200px;
+            @include below(1500px) {
+                margin-top: 150px;
+                font-size: 22px;
+            }
+            @include below(900px) {
+                margin-top: 100px;
+                font-size: 22px;
+            }
+            @include below(768px) {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__btn {
+        padding: 20px 42px;
+    }
+
+    &__bottom {
+
+        @include below(1440px) {
+            bottom: -130px;
+        }
+
+        @include below(768px) {
+            position: relative;
+            right: auto;
+            bottom: auto;
+            left: auto;
+            margin-top: 40px;
+        }
+        position: absolute;
+        right: 0;
+        bottom: -115px;
+        left: 0;
+        width: 100%;
+
+        &-wrap {
+
+            @include below(1500px) {
+                flex-wrap: wrap;
+            }
+
+            @include below(768px) {
+                padding: 20px 10px;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #cdd0d2;
+            padding: 36px 30px 40px;
+            background-color: $white;
+        }
+
+        &-item {
+            &:nth-child(1) {
+                @include below(1500px) {
+                    width: 100%;
+                }
+            }
+
+            &:nth-child(2), &:nth-child(3) {
+                @include below(1500px) {
+                    width: 50%;
+                }
+
+                @include below(900px) {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &-title {
+            @include fontProperty(600, 40px, 48px, $color_dark);
+
+            @include below(1600px) {
+                font-size: 30px;
+                line-height: 120%;
+            }
+
+            @include below(768px) {
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+            }
+            letter-spacing: -0.02em;
+            padding-bottom: 10px;
+        }
+
+        &-text {
+            @include fontProperty(400, 25px, 30px, $color_dark);
+            @include below(1600px) {
+                font-size: 20px;
+                line-height: 120%;
+            }
+
+            @include below(768px) {
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 440px;
+        .form__check {
+            margin-top: 20px;
+        }
+        .form__label {
+            @include below(768px) {
+                margin-right: 0;
+                margin-bottom: 21px;
+            }
+            margin-right: 10px;
+        }
+        .form__btn {
+            @include below(768px) {
+                padding: 11px 0;
+            }
+            padding: 12px 30px;
+            span {
+                white-space: nowrap;
+            }
+        }
+
+        &__policy {
+            font-size: 12px;
+            line-height: 14px;
+            padding-right: 40px;
+        }
+        &-row {
+
+            @include below(768px) {
+                flex-direction: column;
+            }
+            display: flex;
+            align-items: center;
+        }
+    }
+}

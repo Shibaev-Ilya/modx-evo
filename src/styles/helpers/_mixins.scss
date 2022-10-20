@@ -1,0 +1,44 @@
+@mixin h1() {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@mixin fontProperty($weight, $size, $lh: false, $color: false) {
+    font-weight: $weight;
+    font-size: $size;
+
+    @if $lh {
+        line-height: $lh;
+    }
+
+    @if $color {
+        color: $color;
+    }
+}
+
+@mixin fontImport($name, $path, $weight, $style: normal) {
+    font-family: $name;
+    src: url($path + '.woff2' ) format('woff2'),
+        url($path + '.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+}
+
+@mixin below($width){
+    @media (max-width: $width) {
+        @content
+    }
+}
+
+@mixin above($width){
+    @media (min-width: $width) {
+        @content
+    }
+}
+
+@mixin below_and_above($max, $min){
+    @media (max-width: $max) and (min-width: $min){
+        @content
+    }
+}
